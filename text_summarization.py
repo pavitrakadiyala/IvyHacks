@@ -2,9 +2,11 @@ import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
 from string import punctuation
 
+#Opening the text file
 f = open('trial.txt','r')
 text = f.read()
 
+#A list of all the stop words
 stopwords = list(STOP_WORDS)
 
 nlp = spacy.load('en_core_web_sm')
