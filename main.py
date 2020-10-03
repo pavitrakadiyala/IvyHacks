@@ -8,10 +8,10 @@ def hello_world():
     return render_template("index.html")
 
 
-@app.route('/summary',methods=['POST','GET'])
+@app.route('/get_summary',methods=['POST','GET'])
 def predict():
     input_txt = request.form['input_text']
-    print("Input text:"+input_txt)
+    #print("Input text:"+input_txt)
     t = 0
     if request.method == 'POST':  
         if (input_txt == ""):
@@ -84,7 +84,7 @@ def predict():
 
         #print("Your input audio file text:" + text)
 
-        return render_template('index.html', output = summary)
+        return render_template('summary.html', output = summary)
 
 
 if __name__ == '__main__':
