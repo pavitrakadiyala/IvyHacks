@@ -1,0 +1,17 @@
+blis==0.4.1
+catalogue==1.0.0
+cymem==2.0.3
+tqdm==4.42.1
+preshed==3.0.2
+wasabi==0.8.0
+requests==2.24.0
+murmurhash==1.0.2
+plac==1.1.3
+numpy==1.19.1
+srsly==1.0.2
+itsdangerous==1.1.0
+Werkzeug==1.0.1
+Click==7.0
+Jinja2==2.11.1
+SpeechRecognition==3.8.1
+
