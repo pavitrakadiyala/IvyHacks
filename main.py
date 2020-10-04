@@ -35,7 +35,13 @@ def predict():
                 r = sr.Recognizer()
                 with sr.AudioFile(f_name) as source:
                     audio_data = r.record(source)
-                    text = r.recognize_google(audio_data)      
+                    t = r.recognize_google(audio_data)
+                    nlp = spacy.load("en_core_web_sm") 
+                    doc = nlp(t)
+                    x = []
+                    for sent in doc.sents:
+                        x.append(str(sent))
+                    text = ". ".join(x) + "."
         else:
             text = input_txt  
 
@@ -82,9 +88,13 @@ def predict():
 
         summary = ' '.join(final_summary)
 
-        #print("Your input audio file text:" + text)
+        if(len(summary) == 0):
+            final_sum = "Your input text was too small. This is your input text: " + text
+        else:
+            final_sum = summary
 
-        return render_template('summary.html', output = summary)
+
+        return render_template('summary.html', output = final_sum)
 
 
 if __name__ == '__main__':
